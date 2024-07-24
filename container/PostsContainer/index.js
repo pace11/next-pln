@@ -1,4 +1,5 @@
 import CardPost from "@/components/card-post";
+import { previewImage } from "@/helpers";
 import { useQueriesMutation } from "@/hooks/useQueriesMutation";
 import dayjs from "dayjs";
 
@@ -19,12 +20,8 @@ export default function PostsContainer({ tab }) {
             <div className="col-span-12" key={item?.id}>
               <CardPost
                 type="type-1"
-                imgAlt={item?.thumbnail}
-                imgSrc={
-                  item?.thumbnail
-                    ? `${process.env.NEXT_PUBLIC_PATH_IMAGE}/${item?.thumbnail}`
-                    : ""
-                }
+                imgAlt={previewImage({ img: item?.thumbnail })}
+                imgSrc={previewImage({ img: item?.thumbnail })}
                 title={item?.title}
                 description={item?.description}
                 categoryText={item?.categories?.title}
@@ -43,12 +40,8 @@ export default function PostsContainer({ tab }) {
               <div className="col-span-12" key={item?.id}>
                 <CardPost
                   type="type-2"
-                  imgAlt={item?.thumbnail}
-                  imgSrc={
-                    item?.thumbnail
-                      ? `${process.env.NEXT_PUBLIC_PATH_IMAGE}/${item?.thumbnail}`
-                      : ""
-                  }
+                  imgAlt={previewImage({ img: item?.thumbnail })}
+                  imgSrc={previewImage({ img: item?.thumbnail })}
                   title={item?.title}
                   description={item?.description}
                   categoryText={item?.categories?.title}
@@ -71,12 +64,8 @@ export default function PostsContainer({ tab }) {
               key={item?.id}
             >
               <CardPost
-                imgAlt={item?.thumbnail}
-                imgSrc={
-                  item?.thumbnail
-                    ? `${process.env.NEXT_PUBLIC_PATH_IMAGE}/${item?.thumbnail}`
-                    : ""
-                }
+                imgAlt={previewImage({ img: item?.thumbnail })}
+                imgSrc={previewImage({ img: item?.thumbnail })}
                 title={item?.title}
                 description={item?.description}
                 categoryText={item?.categories?.title}

@@ -1,4 +1,5 @@
 import CardPost from "@/components/card-post";
+import { previewImage } from "@/helpers";
 import { useQueriesMutation } from "@/hooks/useQueriesMutation";
 import dayjs from "dayjs";
 import { useRouter } from "next/router";
@@ -24,12 +25,8 @@ export default function DetailPostContainer() {
             {detailPost?.success && (
               <CardPost
                 type="type-4"
-                imgAlt={detailPost?.data?.thumbnail}
-                imgSrc={
-                  detailPost?.data?.thumbnail
-                    ? `${process.env.NEXT_PUBLIC_PATH_IMAGE}/${detailPost?.data?.thumbnail}`
-                    : ""
-                }
+                imgAlt={previewImage({ img: detailPost?.data?.thumbnail })}
+                imgSrc={previewImage({ img: detailPost?.data?.thumbnail })}
                 title={detailPost?.data?.title}
                 description={detailPost?.data?.description}
                 categoryText={detailPost?.data?.categories?.title}
@@ -47,12 +44,8 @@ export default function DetailPostContainer() {
                 {postsRelates?.data?.map((item) => (
                   <div className="col-span-4" key={item?.id}>
                     <CardPost
-                      imgAlt={item?.thumbnail}
-                      imgSrc={
-                        item?.thumbnail
-                          ? `${process.env.NEXT_PUBLIC_PATH_IMAGE}/${item?.thumbnail}`
-                          : ""
-                      }
+                      imgAlt={previewImage({ img: item?.thumbnail })}
+                      imgSrc={previewImage({ img: item?.thumbnail })}
                       title={item?.title}
                       description={item?.description}
                       categoryText={item?.categories?.title}

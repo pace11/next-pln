@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ["pln.pace-unv.cloud"],
+    domains: ["pln.pace-unv.cloud", "127.0.0.1"],
   },
 };
 
