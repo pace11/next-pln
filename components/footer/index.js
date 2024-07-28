@@ -96,6 +96,7 @@ export default function Footer() {
             Reserved
           </p>
         </div>
+        <div className="bg-footer-custom bg-cover bg-center h-64 w-full"></div>
       </div>
     </footer>
   );

@@ -11,6 +11,9 @@ module.exports = {
       colors: {
         "blue-pln": "#2c5c70",
       },
+      backgroundImage: {
+        "footer-custom": "url('/footer.png')",
+      },
     },
     screens: {
       ml: "425px",

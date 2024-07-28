@@ -27,6 +27,7 @@ export default function DetailPostContainer() {
                 type="type-4"
                 imgAlt={previewImage({ img: detailPost?.data?.thumbnail })}
                 imgSrc={previewImage({ img: detailPost?.data?.thumbnail })}
+                imgArray={detailPost?.data?.thumbnail}
                 title={detailPost?.data?.title}
                 description={detailPost?.data?.description}
                 categoryText={detailPost?.data?.categories?.title}

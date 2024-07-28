@@ -1,15 +1,15 @@
 import Layout from "@/layout";
 import "@/styles/globals.css";
-import { Roboto } from "next/font/google";
+import { PT_Sans } from "next/font/google";
 
-const roboto = Roboto({
-  weight: ["100", "300", "400", "500", "700", "900"],
+const sans = PT_Sans({
+  weight: ["400", "700"],
   subsets: ["latin"],
 });
 
 export default function App({ Component, pageProps }) {
   return (
-    <main className={roboto.className}>
+    <main className={sans.className}>
       <Layout>
         <Component {...pageProps} />
       </Layout>

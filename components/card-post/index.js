@@ -20,6 +20,7 @@ function CardPost({
   imgSrc = IMAGE_FALLBACK,
   imgAlt = "",
   imgHeight = "400px",
+  imgArray = "",
   title = "Post title",
   description = "Post description",
   categoryText = "category",
@@ -37,6 +38,7 @@ function CardPost({
         imgSrc={imgSrc}
         imgAlt={imgAlt}
         imgHeight={imgHeight}
+        imgArray={imgArray}
         title={title}
         description={description}
         categoryText={categoryText}

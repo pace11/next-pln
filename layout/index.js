@@ -14,7 +14,17 @@ export default function Layout({ children }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <main className="px-56 max-[1024px]:px-24 max-[425px]:px-6 py-10">
+      <main className="px-56 max-[1024px]:px-24 max-[425px]:px-6 py-10 min-h-80">
+        <p
+          style={{
+            textAlign: "center",
+            fontWeight: "normal",
+            fontSize: "24px",
+            margin: "20px",
+          }}
+        >
+          Dashboard Komunikasi dan TJSL UIP3B Sumatera
+        </p>
         {children}
       </main>
       <Footer />
