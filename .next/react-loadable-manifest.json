@@ -35,7 +35,7 @@
     "id": 5767,
     "files": [
       "static/chunks/675.45f9f7ae57ff0f95.js",
-      "static/chunks/767.ab2aca8b69993550.js"
+      "static/chunks/767.2c637bac7fbd7ae4.js"
     ]
   },
   "layout/index.js -> @/components/header": {
@@ -43,28 +43,28 @@
     "files": [
       "static/chunks/675.45f9f7ae57ff0f95.js",
       "static/chunks/664.806b52bf69b97e98.js",
-      "static/chunks/281.d33a3b3ebcd22a89.js"
+      "static/chunks/281.1b9e7ef897b2c98c.js"
     ]
   },
   "pages/index.js -> @/container/HomeContainer": {
     "id": 3274,
     "files": [
       "static/chunks/397.be491c95ed4b4340.js",
-      "static/chunks/274.4355a9818b2cd19b.js"
+      "static/chunks/274.9d6c611b4254f1bf.js"
     ]
   },
   "pages/tab/[category]/[slug].js -> @/container/DetailPostContainer": {
     "id": 4063,
     "files": [
       "static/chunks/397.be491c95ed4b4340.js",
-      "static/chunks/63.6433c7834f0275a7.js"
+      "static/chunks/63.0abccd06923115cd.js"
     ]
   },
   "pages/tab/[category]/index.js -> @/container/HomeContainer": {
     "id": 3274,
     "files": [
       "static/chunks/397.be491c95ed4b4340.js",
-      "static/chunks/274.4355a9818b2cd19b.js"
+      "static/chunks/274.9d6c611b4254f1bf.js"
     ]
   }
 }
