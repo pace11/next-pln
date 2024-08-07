@@ -32,5 +32,4 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
           script: |
-            sudo su
-            node -v
+            pwd
