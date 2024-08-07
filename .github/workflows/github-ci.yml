@@ -19,8 +19,8 @@ jobs:
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan -H 103.193.178.126 >> ~/.ssh/known_hosts
           ssh infouip3bs@103.193.178.126 << 'EOF'
+            sudo su
             export NVM_DIR="$HOME/.nvm"
             [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-            sudo su
             nvm ls
           EOF
