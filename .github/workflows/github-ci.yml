@@ -19,6 +19,7 @@ jobs:
           port: ${{ secrets.PORT }}
           script: |
             sudo su
+            ls -la
   run-update-prod:
     runs-on: ubuntu-latest
     if: github.ref_type == 'tag' && contains(github.ref_name, 'update_prod')
