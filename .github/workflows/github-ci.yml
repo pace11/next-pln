@@ -6,7 +6,7 @@ on:
       - v**
 
 jobs:
-  run-build-prod:
+  run-update-prod:
     runs-on: ubuntu-latest
     if: github.ref_type == 'tag' && contains(github.ref_name, 'build_prod')
     steps:
@@ -22,5 +22,7 @@ jobs:
             sudo su
             export NVM_DIR="$HOME/.nvm"
             [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-            pm2 list
+            git pull origin master
+            npm run build
+            pm2 restart home-pln
           EOF
