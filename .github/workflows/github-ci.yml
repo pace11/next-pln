@@ -8,6 +8,26 @@ on:
 jobs:
   run-update-prod:
     runs-on: ubuntu-latest
+    if: github.ref_type == 'tag' && contains(github.ref_name, 'update_prod')
+    steps:
+      - name: Deploy over SSH
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        run: |
+          mkdir -p ~/.ssh
+          echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H 103.193.178.126 >> ~/.ssh/known_hosts
+          ssh infouip3bs@103.193.178.126 << 'EOF'
+            sudo su
+            export NVM_DIR="$HOME/.nvm"
+            [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+            git pull origin master
+            npm run build
+            pm2 restart home-pln
+          EOF
+  run-build-prod:
+    runs-on: ubuntu-latest
     if: github.ref_type == 'tag' && contains(github.ref_name, 'build_prod')
     steps:
       - name: Deploy over SSH
@@ -23,6 +43,7 @@ jobs:
             export NVM_DIR="$HOME/.nvm"
             [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
             git pull origin master
+            npm install
             npm run build
             pm2 restart home-pln
           EOF
