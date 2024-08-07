@@ -21,6 +21,6 @@ jobs:
           ssh infouip3bs@103.193.178.126 << 'EOF'
             export NVM_DIR="$HOME/.nvm"
             [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-            nvm -v
+            sudo su
             nvm ls
           EOF
