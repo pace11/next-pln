@@ -19,11 +19,6 @@ jobs:
           port: ${{ secrets.PORT }}
           script: |
             sudo su
-            cd /var/www/next-pln/
-            git pull origin master
-            npm install
-            npm run build
-            pm2 restart home-pln
   run-update-prod:
     runs-on: ubuntu-latest
     if: github.ref_type == 'tag' && contains(github.ref_name, 'update_prod')
