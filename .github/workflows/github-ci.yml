@@ -19,6 +19,7 @@ jobs:
           port: ${{ secrets.PORT }}
           script: |
             sudo su
+            nvm use 18
             git config --global --add safe.directory /var/www/next-pln
             cd /var/www/next-pln/
             git pull origin master
