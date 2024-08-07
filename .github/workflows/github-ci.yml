@@ -20,5 +20,7 @@ jobs:
           script: |
             cd /var/www/next-pln/
             sudo git pull origin master
+            npm install
+            npm run build
             pm2 restart home-pln
             pm2 list
