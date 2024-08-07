@@ -10,17 +10,28 @@ jobs:
     runs-on: ubuntu-latest
     if: github.ref_type == 'tag' && contains(github.ref_name, 'build_prod')
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - name: Setup SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+      
       - name: Running build app
         uses: appleboy/ssh-action@master
-        with: 
+        with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
           script: |
-            cd /var/www/next-pln/
-            sudo git pull origin master
-            npm install
-            npm run build
-            pm2 restart home-pln
-            pm2 list
+            sudo su
+            nvm -v
+            nvm ls-remote
